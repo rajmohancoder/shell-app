@@ -2,7 +2,7 @@
 
 ## Architecture
 
-The Shell App is the host application in a Module Federation micro-frontend architecture. It owns the global shell infrastructure and loads remote Micro Frontends (MFEs) at runtime.
+The Shell App is the host application in a Module Federation micro-frontend architecture. It owns the global shell infrastructure and loads remote Micro Frontends (MFEs) at runtime. 1
 
 ```
 Shell App (Host)
