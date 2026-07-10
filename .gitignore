@@ -9,8 +9,7 @@ dist
 # TypeScript build info
 *.tsbuildinfo
 
-# pnpm
-pnpm-lock.yaml
+# pnpm (lockfile is committed for reproducible builds)
 
 # Logs
 logs
