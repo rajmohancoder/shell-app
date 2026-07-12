@@ -1,6 +1,9 @@
 node_modules
 dist
 
+# npm config (contains token)
+.npmrc
+
 # local env files (secrets)
 .env
 .env.local

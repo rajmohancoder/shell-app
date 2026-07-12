@@ -2,7 +2,7 @@
 
 ## Architecture
 
-The Shell App is the host application in a Module Federation micro-frontend architecture. It owns the global shell infrastructure and loads remote Micro Frontends (MFEs) at runtime. 1
+The Shell App is the host application in a Module Federation micro-frontend architecture. It owns the global shell infrastructure and loads remote Micro Frontends (MFEs) at runtime.
 
 ```
 Shell App (Host)
@@ -135,115 +135,39 @@ src/
 
 This project depends on four shared packages published to GitHub Packages under the `@rajmohancoder` scope:
 
-| Package | Source |
-|---------|--------|
-| `@rajmohancoder/api-client` | [shared-libs/packages/api-client] |
-| `@rajmohancoder/auth-sdk` | [shared-libs/packages/auth-sdk] |
-| `@rajmohancoder/events` | [shared-libs/packages/events] |
-| `@rajmohancoder/types` | [shared-libs/packages/types] |
-
-In `package.json`, these are specified with the `workspace:^` protocol so that
-**local development** resolves them from the sibling `shared-libs` directory,
-while **CI / standalone installs** resolve them from GitHub Packages.
-
----
+| Package | Version |
+|---------|---------|
+| `@rajmohancoder/api-client` | ^0.1.1 |
+| `@rajmohancoder/auth-sdk` | ^0.1.0 |
+| `@rajmohancoder/events` | ^0.1.0 |
+| `@rajmohancoder/types` | ^0.1.0 |
 
 ## Installation
 
-### Local Development (with `shared-libs` workspace)
-
-The `shared-libs` repo should be cloned as a sibling directory:
-
-```
-projects/
-├── shared-libs/
-│   └── packages/
-│       ├── api-client
-│       ├── auth-sdk
-│       ├── events
-│       └── types
-└── shell-app/
-```
-
-Then simply run:
-
 ```bash
 pnpm install
-# or
-node scripts/install.mjs
 ```
 
-The `workspace:^` protocol tells pnpm to link the local packages directly —
-no registry or authentication needed.
+The packages are fetched from GitHub Packages (`https://npm.pkg.github.com`). Authentication is configured in the project's `.npmrc` file:
 
-### Standalone Install (without `shared-libs`)
-
-When you don't have `shared-libs` cloned (fresh clone, CI, etc.), use the
-install script with a GitHub Personal Access Token:
-
-```bash
-GITHUB_TOKEN=ghp_YourTokenHere node scripts/install.mjs
+```
+@rajmohancoder:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=ghp_YourTokenHere
 ```
 
-This temporarily replaces `workspace:^` with `^` in `package.json`, runs
-`pnpm install` (which fetches from GitHub Packages), then restores the
-original file.
+The token must be a GitHub Personal Access Token (classic) with **`read:packages`** scope and access to the `rajmohancoder/shared-libs` repository.
 
-#### Manual install (alternative)
-
-```bash
-GITHUB_TOKEN=ghp_YourTokenHere pnpm add \
-  @rajmohancoder/api-client \
-  @rajmohancoder/auth-sdk \
-  @rajmohancoder/events \
-  @rajmohancoder/types
-```
-
-### Token Requirements
-
-The token needs **`read:packages`** scope (or **`contents: read`** for
-fine-grained tokens) with access to the `rajmohancoder/shared-libs` repo.
-
----
-
-## CI / GitHub Actions
-
-The included `.github/workflows/ci.yml` handles everything automatically:
-
-```yaml
-- run: node scripts/install.mjs
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-- run: npm run build
-```
-
-`secrets.GH_PAT` is a **Personal Access Token** that you create and store as a
-repository secret. The auto-generated `secrets.GITHUB_TOKEN` only has access to
-the current repo — it cannot read packages from a different repo
-(`rajmohancoder/shared-libs`).
-
-### Setup
-
-1. Create a PAT at https://github.com/settings/tokens:
-   - **Classic**: scope `read:packages`
-   - **Fine-grained**: `Packages: Read`, repository access to `rajmohancoder/shared-libs`
-2. Go to your `shell-app` repo → **Settings** → **Secrets and variables** → **Actions**
-3. Add a new secret named `GH_PAT` with the token value
-
----
+> **Note:** `.npmrc` is gitignored to prevent accidentally committing the token.
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `pnpm install` | Install dependencies (workspace mode) |
-| `node scripts/install.mjs` | Install dependencies (auto-detects workspace vs standalone) |
+| `pnpm install` | Install dependencies |
 | `npm run dev` | Start development server |
 | `npm run build` | Type-check + production build |
 | `npm run typecheck` | Type-check only (`tsc -b --noEmit`) |
 | `npm run preview` | Preview production build |
-
----
 
 ## Environment Variables
 

@@ -1,6 +1,5 @@
 packages:
   - '.'
-  - '../shared-libs/packages/*'
 allowBuilds:
   esbuild: true
 onlyBuiltDependencies:
