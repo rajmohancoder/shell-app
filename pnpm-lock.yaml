@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       '@rajmohancoder/api-client':
-        specifier: ^0.1.1
-        version: 0.1.1(@rajmohancoder/auth-sdk@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^0.1.3
+        version: 0.1.3(@rajmohancoder/auth-sdk@0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@rajmohancoder/auth-sdk':
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.1.2
+        version: 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@rajmohancoder/events':
-        specifier: ^0.1.0
-        version: 0.1.0(@rajmohancoder/types@0.1.0(typescript@5.9.3))(typescript@5.9.3)
+        specifier: ^0.1.2
+        version: 0.1.2(@rajmohancoder/types@0.1.3(typescript@5.9.3))(typescript@5.9.3)
       '@rajmohancoder/types':
-        specifier: ^0.1.0
-        version: 0.1.0(typescript@5.9.3)
+        specifier: ^0.1.3
+        version: 0.1.3(typescript@5.9.3)
       add:
         specifier: ^2.0.6
         version: 2.0.6
@@ -359,25 +359,25 @@ packages:
     resolution: {integrity: sha512-Uo08jW5pj1t58OUKuZNkmzcfTN2pqeVuAWCCiKf/75/oll4Efq4cHOqSE1FXMlvwZNGDziNdDyBbQ5IANem3CQ==}
     engines: {node: '>=14.0.0', pnpm: '>=7.0.1'}
 
-  '@rajmohancoder/api-client@0.1.1':
-    resolution: {integrity: sha512-T5IYxGjwsaS58CESo+dmhZLURJVCLlfT3onBX1qFW+RgozFb9Ghm6NtyhZx0noORA9x+eVYm5bHXMBCyCdY/7Q==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/api-client/0.1.1/9e837f73dc8241b2f6ced0706e70bd4b8c93facf}
+  '@rajmohancoder/api-client@0.1.3':
+    resolution: {integrity: sha512-jYgAq41epOwfyaIOwWAdh5xSSZl5eTr3RcFnYOE3F/CkZDmM+DkpztBTT5Q4ovVqIVvwBawD3ctncsLQLtVF4g==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/api-client/0.1.3/48653a1f7ddd9a068e37ac4ae4bfb143eef8cb8b}
     peerDependencies:
       '@rajmohancoder/auth-sdk': '>=0.1.0'
 
-  '@rajmohancoder/auth-sdk@0.1.0':
-    resolution: {integrity: sha512-ON4mRqW0a8pZaGmKU2bw7vzER0Qc4DSQr7ErkKyoKpFHZQ0aIIYTBBqqECpkaOZzmQWuxIepColGpleKT7Aa0Q==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/auth-sdk/0.1.0/ff5c56f7b03b872da1bd6e927f29f51b55567367}
+  '@rajmohancoder/auth-sdk@0.1.2':
+    resolution: {integrity: sha512-xCd/K6WGpGGHu4puVxYNUSh8+W/ScWYz6lMhZXpLfGeEXcTB5w+67o2gN0aoUhHcqUSeZ+RowRw1CXKicfJIbA==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/auth-sdk/0.1.2/84c69ec5ee3bebe19b3807151658bf305c9151dd}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@rajmohancoder/events@0.1.0':
-    resolution: {integrity: sha512-j5pCand1HRT1T4QieC5neAla8w2nTZIEEL5KkZ5Fs5WeugQY6Eji8PBoYymmYwmal/3qbdXjBgpvhs9DnyYM0w==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/events/0.1.0/84535cc6d280df7a7db99d195a14c409af37455d}
+  '@rajmohancoder/events@0.1.2':
+    resolution: {integrity: sha512-Tq4YmEfHLEPWl+jC6ZG47n7L8rGBCVcfSZL2rcjhkXebfiCrqXPKWwPIFZtTWarXgtb9JOHWnP9fcgUWUwZEgg==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/events/0.1.2/cd718347eabd04ab5f38ab51940265313ef49090}
     peerDependencies:
       '@rajmohancoder/types': '>=0.1.0'
       typescript: '>=5.0.0'
 
-  '@rajmohancoder/types@0.1.0':
-    resolution: {integrity: sha512-jd4haGUuX/ph+J3SNVBuvVj0o5MGa2U/5zDfolOjbuvwe/h1jyZ8Ah7vBXLP+F/mBdxxQenyiIAkHWU/mIm49Q==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/types/0.1.0/0deecdec20a970448c80c27aef64d03d285b051b}
+  '@rajmohancoder/types@0.1.3':
+    resolution: {integrity: sha512-tpoXtMPxcVJJgBp7XqWLmc007OnpBZ0uw//9WNFnqojvT7q/A69CVOywu9zVY3i63bK946DOyWT7NSzPt9QvVg==, tarball: https://npm.pkg.github.com/download/@rajmohancoder/types/0.1.3/5f28ef9099de12fcf5b664682c066218c4e8bf56}
     peerDependencies:
       typescript: '>=5.0.0'
 
@@ -1355,27 +1355,27 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.27.0
 
-  '@rajmohancoder/api-client@0.1.1(@rajmohancoder/auth-sdk@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@rajmohancoder/api-client@0.1.3(@rajmohancoder/auth-sdk@0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
-      '@rajmohancoder/auth-sdk': 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@rajmohancoder/auth-sdk': 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       axios: 1.18.1
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@rajmohancoder/auth-sdk@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@rajmohancoder/auth-sdk@0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@azure/msal-browser': 4.30.0
       '@azure/msal-react': 3.0.29(@azure/msal-browser@4.30.0)(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@rajmohancoder/events@0.1.0(@rajmohancoder/types@0.1.0(typescript@5.9.3))(typescript@5.9.3)':
+  '@rajmohancoder/events@0.1.2(@rajmohancoder/types@0.1.3(typescript@5.9.3))(typescript@5.9.3)':
     dependencies:
-      '@rajmohancoder/types': 0.1.0(typescript@5.9.3)
+      '@rajmohancoder/types': 0.1.3(typescript@5.9.3)
       typescript: 5.9.3
 
-  '@rajmohancoder/types@0.1.0(typescript@5.9.3)':
+  '@rajmohancoder/types@0.1.3(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
 

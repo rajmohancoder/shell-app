@@ -164,10 +164,10 @@ The token must be a GitHub Personal Access Token (classic) with **`read:packages
 | Command | Description |
 |---------|-------------|
 | `pnpm install` | Install dependencies |
-| `npm run dev` | Start development server |
-| `npm run build` | Type-check + production build |
-| `npm run typecheck` | Type-check only (`tsc -b --noEmit`) |
-| `npm run preview` | Preview production build |
+| `pnpm dev` | Start development server |
+| `pnpm build` | Type-check + production build |
+| `pnpm typecheck` | Type-check only (`tsc -b --noEmit`) |
+| `pnpm preview` | Preview production build |
 
 ## Environment Variables
 
