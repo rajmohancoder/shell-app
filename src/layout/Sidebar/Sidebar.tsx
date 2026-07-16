@@ -5,7 +5,7 @@ import { isPermissionAllowed } from '@/utils';
 import type { NavigationItem } from '@/types';
 
 const navItems: NavigationItem[] = [
-  { label: 'Dashboard', path: '/', icon: '📊' },
+  // { label: 'Dashboard', path: '/customers', icon: '📊' },
   ...remoteApps.map((r) => ({
     label: r.displayName,
     path: r.routePath.replace('/*', ''),
@@ -38,9 +38,9 @@ export function Sidebar() {
 
           return (
             <NavLink
-              key={item.path}
+              key={item.label}
               to={item.path}
-              end={item.path === '/'}
+              end={item.path === '/' || item.label === 'Dashboard'}
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   isActive

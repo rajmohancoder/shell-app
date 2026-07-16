@@ -18,23 +18,35 @@ export function AppRoutes() {
             </ProtectedRoute>
           }
         />
-        {remoteApps.map((remote) => (
-          <Route
-            key={remote.name}
-            path={remote.routePath}
-            element={
-              <ProtectedRoute
-                requiredPermissions={
-                  remote.requiredPermission
-                    ? [remote.requiredPermission as Permission]
-                    : undefined
-                }
-              >
-                <RemoteLoader remoteName={remote.name} />
-              </ProtectedRoute>
-            }
-          />
-        ))}
+        {remoteApps.map((remote) =>
+          remote.name === 'customer' ? (
+            // TEMPORARY: Bypass all auth checks for Customer MFE integration testing.
+            // The ProtectedRoute wrapper is omitted so that the Customer Management
+            // Micro Frontend loads without authentication or authorization.
+            // Revert by deleting this branch and keeping the standard ProtectedRoute path.
+            <Route
+              key={remote.name}
+              path={remote.routePath}
+              element={<RemoteLoader remoteName={remote.name} />}
+            />
+          ) : (
+            <Route
+              key={remote.name}
+              path={remote.routePath}
+              element={
+                <ProtectedRoute
+                  requiredPermissions={
+                    remote.requiredPermission
+                      ? [remote.requiredPermission as Permission]
+                      : undefined
+                  }
+                >
+                  <RemoteLoader remoteName={remote.name} />
+                </ProtectedRoute>
+              }
+            />
+          ),
+        )}
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="*" element={<NotFound />} />
       </Route>

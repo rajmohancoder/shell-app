@@ -1,3 +1,5 @@
+// Lazy-loads remote micro-frontend components via Module Federation imports.
+// Caches the lazy components so each remote is loaded only once.
 import { lazy, type ComponentType } from 'react';
 
 type RemoteImport = () => Promise<{ default: ComponentType<any> }>;

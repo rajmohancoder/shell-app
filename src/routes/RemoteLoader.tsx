@@ -1,3 +1,6 @@
+// React component that lazy-loads and renders a remote micro-frontend.
+// Shows a spinner while loading, an "unavailable" placeholder if the
+// remote isn't defined, and catches errors via ModuleErrorBoundary.
 import { Suspense } from 'react';
 import { ModuleErrorBoundary } from '@/components/ErrorBoundary';
 import { getRemoteComponent, isRemoteDefined } from '@/federation/remoteLoader';
