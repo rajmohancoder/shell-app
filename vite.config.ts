@@ -11,7 +11,6 @@ export default defineConfig(({ mode }) => {
       react(),
       federation({
         name: 'shell',
-        version: '1.0.0',
         remotes: {
           customer: `${env.VITE_CUSTOMER_REMOTE || 'https://customer-management-ashen.vercel.app'}/assets/remoteEntry.js`,
           orders: `${env.VITE_ORDERS_REMOTE || 'http://localhost:3002'}/assets/remoteEntry.js`,
