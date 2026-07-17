@@ -1,8 +1,7 @@
 node_modules
 dist
 
-# npm config (contains token)
-.npmrc
+# .npmrc is committed (no secrets — token uses env var)
 
 # local env files (secrets)
 .env
